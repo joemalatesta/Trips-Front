@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+.navBar {
+
+  color: white;
+  font-size: 150px;
+}
+.Modal {
+  text-align: center;
+  background: blue;
+
+}
+body {
+  background: url(./pictures/014.JPG);
+  background-size: cover;
+}
