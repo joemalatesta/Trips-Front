@@ -1,2 +1,2 @@
-/front/trips_and_adventures/.env
-/front/trips_and_adventures/node_modules
+.env
+node_modules
