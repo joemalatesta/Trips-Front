@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { Button, Card } from 'semantic-ui-react'
 import EditTripForm from '../EditTripForm'
-import PostForm from '../../Posts/PostForm'
 import NewPostForm from '../../Posts/NewPostForm'
 import TripCard from '../TripCard'
-import PostCard from '../../Posts/PostCard'
 import Body from '../../Body'
 import Nav from '../../Nav'
-
+import PostCard from '../PostCard'
 export default class ShowTrip extends Component {
   constructor(props) {
     super(props)
@@ -15,6 +13,7 @@ export default class ShowTrip extends Component {
     this.state = {
       displayEditTripForm: false,
       displayNewPostForm: false,
+      user_posts: [],
     }
   }
 
@@ -58,7 +57,7 @@ export default class ShowTrip extends Component {
 
   createPost = async (postToCreate) => {
     console.log(postToCreate)
-    console.log(this.props.posts)
+    console.log(this.state.posts)
     console.log(this.currentUserId)
     try {
       const url = process.env.REACT_APP_API_URL + '/api/posts/'
@@ -84,12 +83,27 @@ export default class ShowTrip extends Component {
       if (createPostResponse.status === 200 || createPostResponse.status === 201) {
         console.log('Post CREATED')
         this.setState({
-          posts: [...this.state.posts, createPostJson.data]
+          user_posts: [...this.state.user_posts, createPostJson.data]
         })
       }
-      this.getMyPosts()
     } catch(err) {
       console.log('ERROR CREATING Post', err)
+    }
+  }
+
+  getPosts = async () => {
+  try {
+    const url = process.env.REACT_APP_API_URL + "/api/posts/" + this.state.user_posts
+    console.log(url)
+    const postsResponse = await fetch(url)
+    const postsJson = await postsResponse.json()
+    this.setState({
+      user_posts: postsJson.data
+    })
+    console.log(this.state.user_posts)
+
+  } catch(err) {
+    console.log("ERROR RETRIEVING POST DATA.", err)
     }
   }
 
@@ -103,6 +117,13 @@ export default class ShowTrip extends Component {
             <Card.Meta>{ this.props.trip.trip_date }</Card.Meta>
             <Card.Description>{ this.props.trip.about_trip }</Card.Description>
             <Card.Meta>{ this.props.trip.user.username }</Card.Meta>
+              <div className="CardContainer">
+                  {
+                      this.state.user_posts.map(post =>
+                          <PostCard name={this.state.user_posts} key={this.state.user_posts.id}/>)
+                  }
+                  {}
+              </div>
             < ></>
 
             {
@@ -135,6 +156,13 @@ export default class ShowTrip extends Component {
                 toggleNewPostForm={ this.toggleNewPostForm }
                 createPost={ this.createPost }
               />
+        }
+        {
+          <PostCard
+            user_posts={this.state.user_posts}
+            getPosts={this.getPosts}
+            createPost={ this.createPost }
+          />
         }
       </React.Fragment>
     )

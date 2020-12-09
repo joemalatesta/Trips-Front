@@ -10,21 +10,7 @@ export default class Posts extends Component {
     }
   }
 
-  getPosts = async () => {
-  try {
-    const url = process.env.REACT_APP_API_URL + "/api/posts/" + this.props.trips.id
-    console.log(url)
-    const postsResponse = await fetch(url)
-    const postsJson = await postsResponse.json()
-    this.setState({
-      posts: postsJson.data
-    })
-    console.log(this.state.posts)
 
-    } catch(err) {
-    console.log("ERROR RETRIEVING Post DATA.", err)
-    }
-  }
 
   getPost = async (idOfPost) => {
     try {

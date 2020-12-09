@@ -10,7 +10,7 @@ export default class PostCardList extends Component {
         return (
             <div className="CardContainer">
                 {
-                    this.props.posts.map(post =>
+                    this.props.user_posts.map(post =>
                         <TripCard name={posts.user_posts} />)
                 }
             </div>
