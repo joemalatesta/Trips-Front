@@ -185,7 +185,8 @@ export default class App extends Component {
       const logoutJson = await logoutResponse.json()
       if(logoutResponse.status === 200) {
         this.setState({
-          loggedIn: !this.state.loggedIn
+          loggedIn: !this.state.loggedIn,
+          currentUserId:'',
         })
       }
     } catch(err) {

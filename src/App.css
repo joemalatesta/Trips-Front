@@ -15,3 +15,18 @@ body {
   background: url(./pictures/014.JPG);
   background-size: cover;
 }
+.ui.card {
+  background: url(./pictures/desert.jpg);
+}
+.ui.cards>.card {
+  background: url(./pictures/desert.jpg);
+}
+.ui.active.modal {
+  background: url(./pictures/stones.jpeg);
+}
+/* .ui.modal>.header {
+  background: url(./pictures/stones.jpeg);
+} */
+.ui.modal>.image.content {
+  background: url(./pictures/stones.jpeg);
+}

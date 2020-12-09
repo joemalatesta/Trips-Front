@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Modal, Image } from 'semantic-ui-react'
+import { Button, Form, Grid, Modal, Image, Card, Label} from 'semantic-ui-react'
 
 export default class TitlePage extends Component {
 
@@ -17,8 +17,10 @@ export default class TitlePage extends Component {
           <Modal.Description>
             <Grid columns={1}>
               <Grid.Column>
+              <Label>
                 <h3>I've always loved the outdoors. I am kind of a nut though. My wife always asks if I watched this old show or that one. My response was always the same.. Nope, I was outside playing. Now that I'm older, I want to share those trips with others. I also want to know what they're getting themselves into.</h3>
                 <h3>Welcome To My Site.......</h3>
+              </Label>
               </Grid.Column>
             </Grid>
           </Modal.Description>
