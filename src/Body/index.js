@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TripContainer from '../Trip/TripContainer'
 import ShowTrip from '../Trip/ShowTrip'
-import EditTripForm from '../Trip/EditTripForm'
 
 export default class Body extends Component {
 

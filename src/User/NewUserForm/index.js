@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Image, Input, Label, Modal } from 'semantic-ui-react'
+import { Button, Form, Grid, Image, Input, Label, Modal } from 'semantic-ui-react'
 
 export default class NewUserForm extends Component {
   constructor(props) {
