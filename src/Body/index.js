@@ -50,7 +50,7 @@ export default class Body extends Component {
             tripIdToEdit={this.props.tripIdToEdit}
             updateTrip={this.props.updateTrip}
             seeAllTrips={ this.props.seeAllTrips }
-            comments={ this.props.comments}
+            comments={ this.props.comments}z
             />
           : <TripContainer
               trip_name={ this.props.trip_name }

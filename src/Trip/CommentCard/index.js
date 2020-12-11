@@ -5,7 +5,7 @@ export default function Comments(props) {
 
   const comments = props.comments.map(comment => {
     return (
-      <Card key={ props.comments.id } onClick={ () => props.getComments(comments.id) }>
+      <Card key={ props.comments.id } onClick={ () => props.getComments(comments.id)}>
         <Card.Content>
           <Card.Header>{ props.comments.comments }</Card.Header>
         </Card.Content>

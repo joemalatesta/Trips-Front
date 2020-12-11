@@ -1,7 +1,8 @@
 import React from 'react'
 import CommentCard from '../CommentCard'
-import ShowTrip from '../ShowTrip'
-export default function TripContainer(props) {
+
+
+export default function CommentContainer(props) {
   return (
     <CommentCard
       comments={ props.comments }

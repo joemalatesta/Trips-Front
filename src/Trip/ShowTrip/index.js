@@ -33,7 +33,7 @@ export default class ShowTrip extends Component {
       })
       const deleteTripJson = await deleteTripResponse.json()
       if(deleteTripResponse.status === 200) {
-        console.log('Trip DELETED.', deleteTripJson)
+        console.log('TRIP DELETED.', deleteTripJson)
         this.setState({
           showtrips: false
         })

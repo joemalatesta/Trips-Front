@@ -14,6 +14,7 @@ export default class App extends Component {
       showTrip: false,
       currentUserId: '',
       tripIdToEdit: -1,
+      currentUserName: '',
     }
   }
 
@@ -29,6 +30,7 @@ export default class App extends Component {
       } catch(err) {
       console.log("ERROR RETRIEVING Trip DATA.", err)
     }
+
   }
 
 
@@ -188,7 +190,7 @@ export default class App extends Component {
 
 
   componentDidMount() {
-    this.getTrips()
+    this.seeAllTrips()
   }
 
 
@@ -226,6 +228,7 @@ export default class App extends Component {
           showTrip={ this.state.showTrip }
           loggedIn={ this.state.loggedIn }
           currentUserId={ this.state.currentUserId }
+          currentUserName={ this.state.currentUserName }
           getTrips={ this.getTrips }
           getTrip={ this.getTrip }
           deleteTrip={ this.deleteTrip }
