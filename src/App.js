@@ -69,6 +69,9 @@ export default class App extends Component {
   createTrip = async (tripToCreate) => {
     try {
       const url = process.env.REACT_APP_API_URL + '/api/trips/'
+      console.log(url)
+      console.log(JSON.stringify(tripToCreate))
+
       const createTripResponse = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(tripToCreate),

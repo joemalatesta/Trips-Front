@@ -93,7 +93,7 @@ export default class ShowTrip extends Component {
             <Card.Description>{ this.props.trip.about_trip }</Card.Description>
             <Card.Meta>{ this.props.trip.user_posts }</Card.Meta>
             <Card.Meta>{ this.props.trip.trip_date }</Card.Meta>
-             <Image src={ this.props.trip.trip_pics } size='big' />
+             <Image src={ this.props.trip.trip_pics } size='huge' />
             {
               this.props.trip.user.id === this.props.currentUserId
               &&
