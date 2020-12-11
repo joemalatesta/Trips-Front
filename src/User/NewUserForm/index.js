@@ -43,7 +43,6 @@ export default class NewUserForm extends Component {
         <Modal.Content image>
           <Image size="medium" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0armD3yT_ci5Yr5LWYMN7LoDcY4MtOS55yWzCD28IdFqVwgxUtRvGlmye_KM&usqp=CAc" wrapped />
           <Modal.Description>
-            <Header>Enter your information</Header>
             <Grid columns={2} stackable>
               <Grid.Column>
                 <Label>Username:</Label>
