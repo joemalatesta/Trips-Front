@@ -39,7 +39,7 @@ export default class App extends Component {
       const tripResponse = await fetch(url)
       const tripJson = await tripResponse.json()
       this.setState({
-        trips: tripJson.data,
+        trip: tripJson.data,
         showTrip: !this.state.showTrip
       })
       console.log(this.state.trips)

@@ -94,9 +94,8 @@ export default class ShowTrip extends Component {
             <Card.Meta>{ this.props.trip.user_posts }</Card.Meta>
             <Card.Meta>{ this.props.trip.trip_date }</Card.Meta>
              <Image src={ this.props.trip.trip_pics } size='big' />
-            < ></>
             {
-              this.props.trips.user.id === this.props.currentUserId
+              this.props.trip.user.id === this.props.currentUserId
               &&
                 <React.Fragment>
                   <Button onClick={ this.deleteTrip }>DELETE</Button>
