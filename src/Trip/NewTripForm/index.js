@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { Button, Form, Header, Image, Label, Modal } from 'semantic-ui-react'
-import Nav from '../../Nav'
+import { Button, Form, Image, Label, Modal } from 'semantic-ui-react'
+
 export default class NewTripForm extends Component {
+
   constructor(props) {
     super(props)
 
     this.state = {
       trip_name: '',
       trip_date: '',
-      about_trip: ''
+      user_posts: '',
+      trip_pics: '',
     }
   }
+
 
   handleChange = (event) => {
     this.setState({
@@ -18,24 +21,26 @@ export default class NewTripForm extends Component {
     })
   }
 
+
   handleDropChange = (event, data) => {
     this.setState({
       status: data.value
     })
   }
 
+
   handleSubmit = (event) => {
     event.preventDefault()
-
     this.props.createTrip(this.state)
     this.props.toggleCreateTripForm()
-
     this.setState({
       trip_name: '',
       trip_date: '',
-      about_trip: ''
+      user_posts: '',
+      trip_pics: '',
     })
   }
+
 
   render() {
     return (
@@ -46,14 +51,13 @@ export default class NewTripForm extends Component {
       >
         <Modal.Header>Create New Trip Listing</Modal.Header>
         <Modal.Content image>
-          <Image size="medium" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8p-mjGUip3QUct-RUgMS3Cc9xFo3AED4t7Q&usqp=CAU" wrapped />
+          <Image size="medium" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8p-mjGUip3QUct-RUgMS3Cc9xFo3AED4t7Q&usqp=CAU" />
           <Modal.Description>
-            <Header>Enter Trip Listing Information</Header>
             <Label>Trip Name:</Label>
               <Form.Input
                 type="text"
                 name="trip_name"
-                value={ this.value }
+                value={ this.props.trip_name }
                 placeholder="Enter the name of the Trip."
                 onChange={ this.handleChange }
               />
@@ -61,7 +65,7 @@ export default class NewTripForm extends Component {
               <Form.Input
                 type="text"
                 name="trip_date"
-                value={ this.state.trip_date }
+                value={ this.props.trip_date }
                 placeholder="Enter the date of the trip."
                 onChange={ this.handleChange }
               />
@@ -69,9 +73,17 @@ export default class NewTripForm extends Component {
               <Form.Input
                 control='textarea'
                 name="about_trip"
-                rows='3'
-                value={ this.state.aboutTrip }
+                rows='2'
+                value={ this.props.aboutTrip }
                 placeholder="Enter a description of the Trip."
+                onChange={ this.handleChange }
+              />
+              <Label>Link a Pic:</Label>
+              <Form.Input
+                text="text"
+                name="trip_pics"
+                value={ this.props.trip_pics }
+                placeholder="Your picture url here"
                 onChange={ this.handleChange }
               />
           </Modal.Description>

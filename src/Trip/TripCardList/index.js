@@ -10,8 +10,8 @@ export default class TripCardList extends Component {
         return (
             <div className="CardContainer">
                 {
-                    this.props.trips.map(trip =>
-                        <TripCard name={trip.trip_name} date={trip.trip_date} description={trip.about_trip} />)
+                  this.props.trips.map(trip =>
+                      <TripCard name={this.props.trip.trip_name} date={trip.trip_date} description={trip.about_trip} />)
                 }
             </div>
         )

@@ -6,6 +6,7 @@ import NewTripForm from '../Trip/NewTripForm'
 import TitlePage from '../TitlePage'
 
 export default class Nav extends Component {
+
   constructor(props) {
     super(props)
 
@@ -17,25 +18,7 @@ export default class Nav extends Component {
       displayCreateTripForm: false
     }
   }
-  // 
-  // toggleAllTrips = () => {
-  //   this.setState({
-  //     displayTitleScreen: false,
-  //     displayLoginUserForm: false,
-  //     displayRegisterUserForm: false,
-  //     displayCreateTripForm: false,
-  //   })
-  //   this.props.seeAllTrips()
-  // }
-  //
-  // toggleAllMyTrips = () => {
-  //   this.setState({
-  //     displayTitleScreen: false,
-  //     displayLoginUserForm: false,
-  //     displayRegisterUserForm: false,
-  //     displayCreateTripForm: false,
-  //   })
-  // }
+
 
   toggleTitleScreen = () => {
     this.setState({
@@ -43,11 +26,13 @@ export default class Nav extends Component {
     })
   }
 
+
   toggleLoginUserForm = () => {
     this.setState({
       displayLoginUserForm: !this.state.displayLoginUserForm
     })
   }
+
 
   toggleRegisterUserForm = () => {
     this.setState({
@@ -55,11 +40,13 @@ export default class Nav extends Component {
     })
   }
 
+
   toggleCreateTripForm = () => {
     this.setState({
       displayCreateTripForm: !this.state.displayCreateTripForm
     })
   }
+
 
   render() {
     return (
@@ -94,7 +81,6 @@ export default class Nav extends Component {
                 position='right'
                 onClick={this.props.logoutUser}
               />
-
             </React.Fragment>
             :
             <React.Fragment>

@@ -11,6 +11,9 @@
   background: blue;
 
 }
+.ui.menu {
+  background-attachment: fixed;
+}
 body {
   background: url(./pictures/014.JPG);
   background-size: cover;

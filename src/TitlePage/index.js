@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Modal, Image, Card, Label} from 'semantic-ui-react'
+import { Button, Form, Grid, Modal, Image, Label} from 'semantic-ui-react'
 
 export default class TitlePage extends Component {
 

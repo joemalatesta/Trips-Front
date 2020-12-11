@@ -11,23 +11,24 @@ export default class LoginUserForm extends Component {
     }
   }
 
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
+
   handleSubmit = (event) => {
     event.preventDefault()
-
     this.props.loginUser(this.state)
     this.props.toggleLoginUserForm()
-
     this.setState({
       username: '',
       password: ''
     })
   }
+
 
   render() {
     return (
